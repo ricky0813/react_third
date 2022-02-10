@@ -30,16 +30,13 @@ const Header = (props) => {
                     </h1>
                   </Title>
                 </Grid>
-                <Grid is_flex>
-                  <Button text={"알림"} _onClick={()=>{
+                <Grid is_flex justify='flex-end'>
+                  <Button text={'알림'} _onClick={()=>{
                       history.push('/noti')
-                    }}/>
-                  <Button
-                    text={"로그아웃"}
-                    _onClick={() => {
+                    }} margin='0 10px 0 0' width='10vw'/>
+                  <Button text={"로그아웃"} _onClick={() => {
                       dispatch(userActions.logOutFB());
-                    }}
-                  />
+                    }} width='10vw'/>
                 </Grid>
               </Grid>
             </Grid>
@@ -56,9 +53,9 @@ const Header = (props) => {
                   </h1>
                 </Title>          
             </Grid>
-            <Grid is_flex>
-                <Button text={'로그인'} _onClick={() => {history.push('/login')}}/>
-                <Button text={'회원가입'} _onClick={() => {history.push('/signup')}}/>
+            <Grid is_flex justify='flex-end'>
+                <Button text={'로그인'} _onClick={() => {history.push('/login')}} margin='0 10px 0 0' width='10vw'/>
+                <Button text={'회원가입'} _onClick={() => {history.push('/signup')}} width='10vw'/>
             </Grid>
           </Grid>
         </Grid>

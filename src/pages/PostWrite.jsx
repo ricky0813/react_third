@@ -23,6 +23,9 @@ const PostWrite = (props) => {
     
 
     React.useEffect(() => {
+        console.log(post_id);
+        console.log(is_edit);
+        console.log(is_login)
         if(is_edit && !_post){
             window.alert('포스트 정보가 없어요!')
             history.goBack()

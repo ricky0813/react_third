@@ -5,12 +5,16 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators as postActions } from '../redux/modules/post';
 import { actionCreators as likeActions } from '../redux/modules/like';
+
 import Like from '../elements/Like';
+import { history } from './../redux/configureStore';
 
 
 const Post = (props) => {
-    const {history} = props;
+    // const {history} = props;
     const dispatch = useDispatch();
+
+    console.log(props)
 
     const post_id = props.id;
     const is_login = useSelector(state => state.user.is_login);
@@ -53,8 +57,8 @@ const Post = (props) => {
                     <Grid is_flex justify={'flex-end'}>
                         <Text>{props.insert_dt}</Text>
                         {props.is_me && 
-                        <Button width='auto' margin='0 0 0 4px' padding='4px' _onClick={(event) => {
-                            event.stopPropagation();
+                        <Button width='auto' margin='0 0 0 4px' padding='4px' _onClick={(e)=>{
+                            e.stopPropagation();
                             history.push(`/write/${props.id}`)
                         }}>
                             수정
