@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Grid = (props) => {
-    const {is_flex, width, margin, padding, bg, children, justify, center, _onClick, maxWidth} = props;
+    const {is_flex, width, margin, padding, bg, children, justify, center, _onClick, maxWidth, fixed, border} = props;
 
     const styles = {
         is_flex: is_flex,
@@ -13,6 +13,8 @@ const Grid = (props) => {
         bg: bg,
         center: center,
         maxWidth: maxWidth,
+        fixed: fixed,
+        border: border,
     };
 
     return (
@@ -35,6 +37,8 @@ Grid.defaultProps = {
     center: false,
     _onClick: () => {},
     maxWidth: false,
+    fixed: false,
+    border: false,
 }
 
 const GridBox = styled.div`
@@ -47,6 +51,17 @@ const GridBox = styled.div`
     ${(props) => props.is_flex? `display: flex; align-items: center; justify-content: ${props.justify};` : ""}
     ${(props) => props.center ? `text-align: center` : ''}
     ${(props) => props.maxWidth ? `max-width: ${props.maxWidth}` : ''}
+    ${(props) => props.border ? `border: ${props.border}` : ''}
+    ${(props) => props.fixed ? `
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 2px solid #ddd;
+        height: 5vw;
+        min-height: 70px;
+        background-color: #fff;
+        z-index: 9999;
+    ` : ''}
 `;
 
 export default Grid;

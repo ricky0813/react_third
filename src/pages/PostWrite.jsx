@@ -66,21 +66,21 @@ const PostWrite = (props) => {
     return (
         <>
             <Grid padding='16px'>
-                <Text size='36px' bold='600' margin='0'>{is_edit ? '게시글 수정' : '게시글 작성'}</Text>
-                <Grid margin = '5vh 0 2vh 0'>
-                    <Text margin='0' size='20px' bold='500'>레이아웃 선택</Text>
+                <Text size='28px' bold='800' margin='10px'>{is_edit ? '게시글 수정' : '게시글 작성'}</Text>
+                <Grid margin = '5vh 0 2vh 0' padding='0 16px'>
+                    <Text margin='0' size='18px' bold='600'>레이아웃 선택</Text>
                     <Radio _onClick={changeLayout} _value={layout}/>
                 </Grid>
             </Grid>
-            <Grid padding='16px'>
-                <Text size='20px' bold='500' margin='0 0 2vw 0'>사진 선택</Text>
+            <Grid padding='16px 32px'>
+                <Text size='18px' bold='600' margin='0 0 20px 0'>사진 선택</Text>
                 <Upload/>
             </Grid>
             {(layout === 'center')&&(
                 <>
                     <Grid margin='3vh 0 0 0 '>
-                        <Grid padding='16px'>
-                            <Text margin='0' size='20px' bold='500'>미리보기</Text>
+                        <Grid padding='16px 32px'>
+                            <Text margin='0' size='18px' bold='600'>미리보기</Text>
                         </Grid>
                         <Image shape='rectangle' src={preview ? preview : 'https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'}></Image>
                     </Grid>
@@ -91,8 +91,8 @@ const PostWrite = (props) => {
             )}
             {(layout === 'layoutLeft')&&(
                 <>
-                    <Grid margin='3vh 0 0 0 ' padding='16px'>  
-                        <Text margin='0' size='20px' bold='500'>미리보기</Text>    
+                    <Grid margin='3vh 0 0 0 ' padding='16px 32px'>  
+                        <Text margin='0' size='18px' bold='600'>미리보기</Text>    
                     </Grid>
                     <Grid padding='16px' is_flex>
                         <Image shape='square' src={preview ? preview : 'https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'}></Image>
@@ -104,8 +104,8 @@ const PostWrite = (props) => {
             )}
             {(layout === 'layoutRight')&&(
                 <>
-                    <Grid margin='3vh 0 0 0 ' padding='16px'>  
-                        <Text margin='0' size='20px' bold='500'>미리보기</Text>    
+                    <Grid margin='3vh 0 0 0 ' padding='16px 32px'>  
+                        <Text margin='0' size='18px' bold='600'>미리보기</Text>    
                     </Grid>
                     <Grid padding='16px' is_flex>
                         <Grid margin='0 2vw 0 0'>
@@ -117,7 +117,7 @@ const PostWrite = (props) => {
             )}
 
             <Grid padding='16px'>
-                <Button text={is_edit ? '게시글 수정' : '게시글 작성'} _onClick={is_edit ? editPost : addPost}/>
+                <Button text={is_edit ? '게시글 수정' : '게시글 작성'} _onClick={is_edit ? editPost : addPost} _disabled={!preview || contents === '' ? true : false}/>
             </Grid>
         </>
     );

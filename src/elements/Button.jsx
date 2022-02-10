@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Button = (props) => {
 
-    const {text, _onClick, is_float, children, margin, width, padding, disabled} = props;
+    const {text, _onClick, is_float, children, margin, width, padding, _disabled} = props;
 
     if(is_float) {
         return(
@@ -19,7 +19,7 @@ const Button = (props) => {
 
     return (
         <>
-            <ElButton onClick={_onClick} {...styles} >
+            <ElButton onClick={_onClick} {...styles} disabled={_disabled}>
                 {text? text : children}
             </ElButton>
         </>
@@ -34,7 +34,7 @@ Button.defaultProps = {
     margin: false,
     width: '100%',
     padding: '12px 0',
-    disabled: false,
+    _disabled: false,
 }
 
 const ElButton = styled.button`
@@ -46,6 +46,10 @@ const ElButton = styled.button`
    border: none;
    ${(props) => props.margin ? `margin: ${props.margin};` : ''}
    cursor: pointer;
+
+   &:disabled {
+       opacity: 0.8;
+   }
 `
 const FloatButton = styled.button`
     width: 50px; 

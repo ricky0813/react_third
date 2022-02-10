@@ -12,6 +12,8 @@ const Login = () => {
     const [id,setId] = React.useState('');
     const [pwd, setPwd] = React.useState('')
 
+ 
+
     const login = () => {
 
       if(id === '' || pwd === ''){
@@ -58,7 +60,9 @@ const Login = () => {
             _onClick={() => {
                 console.log("로그인 했어!");
                 login();
+                
             }}
+            _disabled={id==='' || pwd==='' ? true : false}
           />
         </Grid>
       </>

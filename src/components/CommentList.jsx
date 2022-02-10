@@ -46,7 +46,7 @@ const CommentItem = (props) => {
             <Grid is_flex>
                 <Grid is_flex justify='flex-start'>
                     <Image shape='circle' margin='0 5% 0 0 '/>
-                    <Text margin='0 2% 0 0' bold>{user_name}</Text>
+                    <Text margin='0 2% 0 0' bold='600'>{user_name}</Text>
                     <Text margin='0 0 0 0'>{contents}</Text>
                 </Grid>
                 <Grid is_flex margin='0px 4px' justify='flex-end' width='auto'>

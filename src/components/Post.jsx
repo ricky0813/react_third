@@ -108,8 +108,8 @@ const Post = (props) => {
                 </Grid> */}
                 <Grid padding='16px' is_flex>
                     <Grid is_flex justify='flex-start'>
-                        <Text margin= '0 2% 0 0' bold>{`댓글 ${props.comment_cnt}개`}</Text>
-                        <Text margin= '0' bold>{`좋아요 ${props.like_cnt}개`}</Text>
+                        <Text margin= '0 2% 0 0' bold='500'>{`댓글 ${props.comment_cnt}개`}</Text>
+                        <Text margin= '0' bold='500'>{`좋아요 ${props.like_cnt}개`}</Text>
                     </Grid>
                     <Like width='22px' _onClick={checkLike} checked={is_login&&like_list.includes(post_id) ? true : false}/>      
                 </Grid>

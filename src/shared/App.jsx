@@ -50,13 +50,15 @@ function App() {
       <Grid maxWidth='1200px' margin='0 auto'>
         <ConnectedRouter history={history}>
           <Header/>
-          <Route path="/" exact component={PostList} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/signup" exact component={Signup} />
-          <Route path='/write' exact component={PostWrite}/>
-          <Route path='/write/:id' exact component={PostWrite}/>
-          <Route path='/post/:id' exact component={PostDetail}/>
-          <Route path='/noti' exact component={Notification}/>
+          <Grid margin='calc(4vw + 40px) 0 0 0'>
+            <Route path="/" exact component={PostList} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/signup" exact component={Signup} />
+            <Route path='/write' exact component={PostWrite}/>
+            <Route path='/write/:id' exact component={PostWrite}/>
+            <Route path='/post/:id' exact component={PostDetail}/>
+            <Route path='/noti' exact component={Notification}/>
+          </Grid>
         </ConnectedRouter>
       </Grid>
       <Permit>

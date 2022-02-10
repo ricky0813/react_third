@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './../elements/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators as imgActions } from '../redux/modules/image';
+import Grid from './../elements/Grid';
 
 
 const Upload = (props) => {
@@ -42,7 +43,9 @@ const Upload = (props) => {
 
     return (
         <>
-            <input type="file" onChange={selectFile} ref={fileInput} disabled={is_uploading}/>
+            <Grid padding='0 3vw'>
+                <input type="file" onChange={selectFile} ref={fileInput} disabled={is_uploading}/>
+            </Grid>
             {/* <Button _onClick={uploadImage}>업로드하기</Button> */}
         </>
     );
